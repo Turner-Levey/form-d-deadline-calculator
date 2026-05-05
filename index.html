@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form D Deadline Calculator</title>
+    <meta name="description" content="Free no-tracking Form D deadline calculator for Regulation D first-sale dates, weekend and federal holiday adjustment, annual amendment reminders, memo copy, and CSV export.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://form-d-deadline-calculator.vercel.app/">
+    <meta property="og:title" content="Form D Deadline Calculator">
+    <meta property="og:description" content="Calculate a Regulation D Form D notice target date locally in your browser. No signup, no tracking, no uploaded data.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://form-d-deadline-calculator.vercel.app/">
+    <meta property="og:image" content="https://form-d-deadline-calculator.vercel.app/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://form-d-deadline-calculator.vercel.app/preview.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "Form D Deadline Calculator",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Any",
+            "url": "https://form-d-deadline-calculator.vercel.app/",
+            "description": "Free no-tracking browser-only deadline worksheet for Regulation D Form D notice timing from a first-sale date.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What does this Form D calculator do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It turns a Regulation D first-sale date into a Form D notice target date, then creates a source-linked memo and CSV planning row."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this file Form D or give legal advice?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. It is an informational worksheet only. It does not file anything on EDGAR, determine exemption eligibility, cover state notice filings, or provide legal advice."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this upload offering data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The calculator runs entirely in the browser and has no signup, cookies, analytics, beacons, external scripts, uploads, or browser storage."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel tool-panel" aria-labelledby="page-title">
+        <div class="mast">
+          <div>
+            <p class="eyebrow">Local-first SEC date worksheet</p>
+            <h1 id="page-title">Form D Deadline Calculator</h1>
+            <p class="lede">Estimate the Form D notice target date for a Regulation D first sale, then copy a source-linked memo or CSV row for a founder, fund, issuer-ops, or securities-counsel checklist.</p>
+          </div>
+          <div class="date-badge" aria-label="Form D notice deadline">
+            <span>15 days</span>
+            <small>after first sale, adjusted when needed</small>
+          </div>
+        </div>
+
+        <form class="calculator" id="deadline-form">
+          <div class="grid">
+            <label class="field">
+              <span>Issuer or fund</span>
+              <input id="issuer" type="text" autocomplete="off" value="Example Seed Issuer">
+            </label>
+            <label class="field">
+              <span>Offering label</span>
+              <input id="offering" type="text" autocomplete="off" value="Seed SAFE financing">
+            </label>
+            <label class="field">
+              <span>Date of first sale</span>
+              <input id="first-sale-date" type="date">
+            </label>
+            <label class="field">
+              <span>Actual Form D filing date, optional</span>
+              <input id="actual-filing-date" type="date">
+            </label>
+          </div>
+
+          <div class="grid">
+            <label class="field">
+              <span>Prior Form D or amendment date</span>
+              <input id="prior-notice-date" type="date">
+            </label>
+            <label class="field">
+              <span>Offering status</span>
+              <select id="offering-status">
+                <option>Unknown / verify</option>
+                <option>Ongoing</option>
+                <option>Closed</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>EDGAR access status</span>
+              <select id="edgar-status">
+                <option>No CIK or access yet</option>
+                <option>CIK exists, access not confirmed</option>
+                <option>CIK and EDGAR access confirmed</option>
+                <option>Unknown / ask counsel</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Exemption label</span>
+              <select id="exemption-path">
+                <option>Rule 506(b)</option>
+                <option>Rule 506(c)</option>
+                <option>Rule 504</option>
+                <option>Section 4(a)(5)</option>
+                <option>Unknown / verify</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field full">
+            <span>Extra SEC closure dates</span>
+            <input id="closure-dates" type="text" placeholder="2026-05-25, 2026-06-19">
+          </label>
+          <label class="field full">
+            <span>State notice notes</span>
+            <input id="state-notes" type="text" value="Verify each state notice filing, renewal, portal, and fee separately.">
+          </label>
+          <label class="field full">
+            <span>Next verification step</span>
+            <input id="next-step" type="text" value="Confirm first-sale date, exemption path, EDGAR access, state notice filings, and whether the offering remains ongoing.">
+          </label>
+
+          <div class="result-band" id="results" aria-live="polite"></div>
+          <textarea id="memo-output" spellcheck="false" aria-label="Generated Form D deadline memo"></textarea>
+
+          <div class="actions">
+            <button type="button" id="calculate">Calculate</button>
+            <button type="button" id="copy-memo">Copy memo</button>
+            <button type="button" id="copy-csv">Copy CSV row</button>
+            <button type="button" id="download-csv">Download CSV</button>
+          </div>
+          <p class="rate-note">Weekend and standard U.S. federal holiday handling is included. Add emergency SEC closure dates manually when applicable.</p>
+        </form>
+      </section>
+
+      <section class="support">
+        <div class="source-strip">
+          <span>Official sources</span>
+          <a href="https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/what-form-d" rel="noreferrer">SEC: What is Form D?</a>
+          <a href="https://www.sec.gov/resources-small-businesses/exempt-offerings/filing-form-d-notice" rel="noreferrer">SEC: Filing a Form D Notice</a>
+          <a href="https://www.sec.gov/submit-filings/forms-index/form-d" rel="noreferrer">SEC Form D page</a>
+        </div>
+        <div class="examples">
+          <h2>What It Covers</h2>
+          <div class="table-wrap" role="region" aria-label="Form D planning coverage">
+            <table>
+              <thead>
+                <tr>
+                  <th>Input</th>
+                  <th>Worksheet output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>First-sale date</td><td>15-calendar-day raw date and adjusted target filing date</td></tr>
+                <tr><td>Weekend, federal holiday, or custom closure</td><td>Next-business-day adjustment</td></tr>
+                <tr><td>Actual filing date</td><td>Filed-by-target or late-review status</td></tr>
+                <tr><td>Prior notice date</td><td>Annual amendment anniversary and planning target</td></tr>
+                <tr><td>EDGAR access status</td><td>Practical access-readiness note for the memo</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="notes">
+          <h2>Use Notes</h2>
+          <p>Use the output as a filing checklist row, not as a legal conclusion. Confirm the exemption path, first-sale date, state notice obligations, EDGAR access, signature readiness, and amendment requirements before relying on the date.</p>
+          <p>SEC small-business guidance says companies must file Form D within 15 days after the first sale, and that if the due date falls on a weekend or holiday it moves to the next business day.</p>
+        </div>
+        <div class="faq">
+          <h2>FAQ</h2>
+          <h3>What date starts the Form D clock?</h3>
+          <p>SEC guidance describes the first sale as the date when the first investor is irrevocably contractually committed to invest. Verify the actual offering facts with counsel.</p>
+          <h3>Does this cover state Blue Sky notices?</h3>
+          <p>No. This is a federal Form D date planner. State securities notice filings can have different deadlines, fees, portals, renewals, and late-filing consequences.</p>
+        </div>
+        <div class="privacy">
+          <h2>Privacy</h2>
+          <p>No signup. No cookies. No analytics. No beacons. No external scripts. No uploads. No browser storage. The page can be saved and run offline.</p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

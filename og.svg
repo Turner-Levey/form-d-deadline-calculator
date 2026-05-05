@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Form D Deadline Calculator</title>
+  <desc id="desc">Social preview for a no-tracking Form D deadline calculator.</desc>
+  <rect width="1200" height="630" fill="#edf1f7"/>
+  <path d="M0 0h1200v144H0z" fill="#1d4ed8"/>
+  <path d="M906 0h294v630H906z" fill="#fff7ed"/>
+  <circle cx="1008" cy="226" r="92" fill="#b45309"/>
+  <text x="971" y="250" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">D</text>
+  <rect x="86" y="96" width="760" height="438" rx="24" fill="#ffffff" stroke="#cfd8e5" stroke-width="3"/>
+  <text x="132" y="178" fill="#1e3a8a" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">LOCAL-FIRST SEC DATE WORKSHEET</text>
+  <text x="132" y="270" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="900">Form D</text>
+  <text x="132" y="352" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="900">Deadline Calculator</text>
+  <text x="132" y="425" fill="#526174" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Memo + CSV export. No signup. No tracking.</text>
+  <text x="132" y="485" fill="#1d4ed8" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="850">form-d-deadline-calculator.vercel.app</text>
+  <rect x="936" y="379" width="204" height="78" rx="16" fill="#1d4ed8"/>
+  <text x="958" y="430" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="900">15 days</text>
+  <text x="945" y="498" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="850">first sale</text>
+  <text x="945" y="538" fill="#142033" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="850">notice target</text>
+</svg>

@@ -1,0 +1,19 @@
+# Form D Deadline Calculator
+
+> Free local-first, no-tracking Form D deadline calculator for Regulation D first-sale timing.
+
+Site: https://form-d-deadline-calculator.vercel.app/
+Source: https://github.com/Turner-Levey/form-d-deadline-calculator
+Preview image: https://form-d-deadline-calculator.vercel.app/preview.png
+IndexNow key file: https://form-d-deadline-calculator.vercel.app/4f2e8d9c6b7a4f3a9e1c0d8b6a2f4c1e.txt
+
+## Tool
+
+- [Form D Deadline Calculator](https://form-d-deadline-calculator.vercel.app/): Estimate a Form D notice target date from a Regulation D first-sale date, copy a source-linked memo, or export a CSV planning row.
+
+## Notes
+
+- Runs entirely in the browser.
+- No signup, cookies, analytics, beacons, uploads, external scripts, or browser storage.
+- Handles weekends, standard U.S. federal holidays, and optional extra SEC closure dates.
+- Informational worksheet only; not legal advice, securities advice, investment advice, EDGAR validation, SEC affiliation, state notice coverage, or an EDGAR filing service.
