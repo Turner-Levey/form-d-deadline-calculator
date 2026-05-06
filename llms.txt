@@ -13,6 +13,11 @@ IndexNow key file: https://form-d-deadline-calculator.vercel.app/4f2e8d9c6b7a4f3
 
 - [Form D Deadline Calculator](https://form-d-deadline-calculator.vercel.app/): Estimate a Form D notice target date from a Regulation D first-sale date, copy a source-linked memo, or export a CSV planning row.
 
+## Related Standalone SEC Tools
+
+- [SEC Filing Fee Calculator](https://sec-filing-fee-calculator.vercel.app/): Estimate SEC filing fees from aggregate amount or shares times price, subtract a prior fee offset, copy a memo, or download an EX-FILING-FEES review row.
+- [Schedule 13D / 13G Deadline Calculator](https://sec-13d-13g-deadline-calculator.vercel.app/): Estimate common beneficial ownership reporting target dates, copy a source-linked memo, or export a CSV planning row.
+
 ## Notes
 
 - Runs entirely in the browser.

@@ -20,6 +20,11 @@ No-Login Tools listing: https://nologin.tools/tool/form-d-deadline-calculator-ve
 
 No-Login Tools certificate: https://nologin.tools/badge/form-d-deadline-calculator-vercel-app/
 
+Related standalone SEC tools:
+
+- SEC Filing Fee Calculator: https://sec-filing-fee-calculator.vercel.app/
+- Schedule 13D / 13G Deadline Calculator: https://sec-13d-13g-deadline-calculator.vercel.app/
+
 Sources:
 
 - SEC: What is Form D? https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/what-form-d
