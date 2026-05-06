@@ -14,7 +14,7 @@ Live site: https://form-d-deadline-calculator.vercel.app/
 
 Source: https://github.com/Turner-Levey/form-d-deadline-calculator
 
-Preview image: https://form-d-deadline-calculator.vercel.app/preview.png
+![Form D Deadline Calculator preview](https://form-d-deadline-calculator.vercel.app/preview.png)
 
 No-Login Tools listing: https://nologin.tools/tool/form-d-deadline-calculator-vercel-app/
 
