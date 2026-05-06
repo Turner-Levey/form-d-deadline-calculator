@@ -18,6 +18,7 @@ IndexNow key file: https://form-d-deadline-calculator.vercel.app/4f2e8d9c6b7a4f3
 
 - [SEC Filing Fee Calculator](https://sec-filing-fee-calculator.vercel.app/): Estimate SEC filing fees from aggregate amount or shares times price, subtract a prior fee offset, copy a memo, or download an EX-FILING-FEES review row.
 - [Schedule 13D / 13G Deadline Calculator](https://sec-13d-13g-deadline-calculator.vercel.app/): Estimate common beneficial ownership reporting target dates, copy a source-linked memo, or export a CSV planning row.
+- [Section 16 Deadline Calculator](https://section-16-deadline-calculator.vercel.app/): Estimate common SEC Form 3, Form 4, and Form 5 insider reporting target dates, copy a source-linked memo, or export a CSV planning row.
 
 ## Notes
 
