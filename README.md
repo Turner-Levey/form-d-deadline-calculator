@@ -16,6 +16,10 @@ Source: https://github.com/Turner-Levey/form-d-deadline-calculator
 
 Preview image: https://form-d-deadline-calculator.vercel.app/preview.png
 
+No-Login Tools listing: https://nologin.tools/tool/form-d-deadline-calculator-vercel-app/
+
+No-Login Tools certificate: https://nologin.tools/badge/form-d-deadline-calculator-vercel-app/
+
 Sources:
 
 - SEC: What is Form D? https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/what-form-d
