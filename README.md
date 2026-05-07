@@ -18,6 +18,8 @@ Source: https://github.com/Turner-Levey/form-d-deadline-calculator
 
 Tiny Tool Town listing: https://www.tinytooltown.com/tools/form-d-deadline-calculator/
 
+Awesome SEC Filings listing: https://github.com/vibeyclaw/awesome-sec-filings#general-sec-filings
+
 No-Login Tools listing: https://nologin.tools/tool/form-d-deadline-calculator-vercel-app/
 
 No-Login Tools certificate: https://nologin.tools/badge/form-d-deadline-calculator-vercel-app/
